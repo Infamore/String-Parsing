@@ -29,3 +29,15 @@ string newparse(string str) {
 	}
 	return val;
 }
+
+string fileparse(string str) {
+	int i;
+	
+	for (i = 0; i < str.size(); i++)
+		if (str[i] == '-') {
+			i += 3;
+			break;
+		}
+	str.erase(str.begin(), str.begin()+i);
+	return str;
+}
